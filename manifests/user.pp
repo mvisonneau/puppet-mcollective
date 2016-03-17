@@ -16,6 +16,7 @@ define mcollective::user(
   $middleware_ssl    = undef,
   $securityprovider  = undef,
   $connector         = undef,
+  $ssl_ciphers       = undef,
 ) {
 
   include ::mcollective
@@ -112,6 +113,7 @@ define mcollective::user(
       homedir        => $homedir,
       connector      => $_connector,
       middleware_ssl => $_middleware_ssl,
+      ssl_ciphers    => $ssl_ciphers,
       order          => '60',
     }
   }
